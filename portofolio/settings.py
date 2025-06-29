@@ -32,8 +32,9 @@ if not SECRET_KEY:
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+ALLOWED_HOSTS = ['mellyportfolio.vercel.app']
 
-ALLOWED_HOSTS = ['riskamellyportofolio.onrender.com']
+# ALLOWED_HOSTS = ['riskamellyportofolio.onrender.com']
 
 
 # Application definition
