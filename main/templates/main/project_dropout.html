@@ -1,0 +1,64 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Dropout & Anomaly Detection{% endblock %}
+
+{% block content %}
+<section class="min-h-screen bg-gradient-to-b from-white via-purple-100 to-pink-50 py-20 px-6">
+  <div class="max-w-5xl mx-auto bg-white rounded-3xl shadow-2xl border border-purple-100 p-10">
+
+    <!-- 🔠 Title -->
+    <h1 class="text-5xl font-extrabold text-purple-700 mb-6 animate-pulse">🤖 Student Dropout & Anomaly Predictor</h1>
+
+    <!-- 📝 Introduction -->
+    <p class="text-lg text-gray-700 mb-6">
+      A smart system to predict dropout risk and detect behavioral anomalies in students based on their interactions in the LMS (Learning Management System). This project integrates multiple machine learning models including XGBoost, Regression, and Clustering, with interactive Chart.js visualizations.
+    </p>
+
+    <!-- 📌 Feature Highlights -->
+    <ul class="list-disc list-inside text-base text-gray-700 mb-8 space-y-2">
+      <li>📚 Based on LMS activity logs: quizzes, forums, assignments</li>
+      <li>🧠 Machine Learning: Dropout Prediction + Behavioral Anomaly Detection</li>
+      <li>📊 Dynamic dashboard using Chart.js for visual performance insight</li>
+    </ul>
+
+    <!-- 🎓 Detailed Explanation -->
+    <div class="bg-pink-50 border border-pink-200 p-6 rounded-xl mb-8 text-left space-y-4 text-sm text-gray-700">
+      <h2 class="text-lg font-bold text-purple-700">🧠 Machine Learning Techniques:</h2>
+
+      <ul class="list-disc list-inside space-y-2">
+        <li><strong>XGBoost Classification:</strong> Classifies students into dropout vs non-dropout categories using behavioral features. Highly accurate and optimized for speed.</li>
+        <li><strong>Regression (Random Forest):</strong> Predicts a continuous performance score (e.g., expected grade) to assess learning outcomes.</li>
+        <li><strong>Clustering (KMeans):</strong> Groups students into categories like "Normal", "At Risk", or "Highly Anomalous" to highlight irregular patterns in learning behavior.</li>
+      </ul>
+
+      <h2 class="text-lg font-bold text-purple-700 pt-4">📏 Model Evaluation Metrics:</h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li><strong>Accuracy (Classification):</strong> Proportion of correct dropout predictions (closer to 100% is better).</li>
+        <li><strong>R² Score (Regression):</strong> Indicates how well the regression model predicts the actual learning score (1 = perfect prediction).</li>
+        <li><strong>Silhouette Score (Clustering):</strong> Measures the quality of clusters formed (range: -1 to +1, where closer to 1 is ideal).</li>
+      </ul>
+    </div>
+
+    <!-- 🎥 Demo GIF -->
+    <img src="{% static 'demo/demo_avg.gif' %}" class="w-full rounded-xl border shadow mb-6" alt="Dropout Prediction Demo">
+
+    <!-- 🔗 Buttons -->
+    <div class="flex gap-4">
+      <a href="https://github.com/RiskaMellyAgustin/DATA-SCIENCE-PROJECT-EXAM" target="_blank" class="btn-purple">💻 GitHub</a>
+      <a href="{% url 'home' %}" class="btn-gray">← Back to Home</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- 🧁 Tailwind Custom Buttons -->
+<style>
+  .btn-purple {
+    @apply px-6 py-2 bg-purple-100 text-purple-700 rounded-full hover:bg-purple-200 font-semibold text-sm shadow;
+  }
+  .btn-gray {
+    @apply px-6 py-2 bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300 font-semibold text-sm shadow;
+  }
+</style>
+{% endblock %}

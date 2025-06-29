@@ -1,0 +1,47 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Projects{% endblock %}
+
+{% block content %}
+<section class="min-h-screen bg-gradient-to-b from-white via-pink-100 to-pink-50 py-20 px-6">
+  <div class="max-w-6xl mx-auto space-y-24">
+
+    <!-- 📦 Project 1 -->
+    <div id="project-revenue" class="bg-white rounded-3xl shadow-xl border border-pink-100 p-10">
+      <h2 class="text-4xl font-bold text-pink-700 mb-4 animate-pulse">🎯 Revenue Cycle System</h2>
+      <p class="text-lg text-gray-700 mb-4">
+        Sistem Django untuk manajemen langganan seperti Netflix. Fitur: invoice otomatis, admin dashboard, export PDF.
+      </p>
+      <img src="{% static 'demo/demo_acc.gif' %}" class="w-full rounded-xl border shadow mb-4" alt="Demo GIF">
+      <div class="flex gap-4">
+        <a href="https://github.com/RiskaMellyAgustin/NETFLIX-PROJECT-REVENUE" target="_blank" class="btn-purple">💻 GitHub</a>
+        <a href="{% url 'home' %}" class="btn-gray">← Home</a>
+      </div>
+    </div>
+
+    <!-- 📦 Project 2 -->
+    <div id="project-dropout" class="bg-white rounded-3xl shadow-xl border border-purple-100 p-10">
+      <h2 class="text-4xl font-bold text-purple-700 mb-4 animate-pulse">🤖 LMS Dropout Predictor</h2>
+      <p class="text-lg text-gray-700 mb-4">
+        Prediksi dropout mahasiswa dari aktivitas LMS dengan XGBoost & visualisasi Chart.js. Backend Django.
+      </p>
+      <img src="{% static 'demo/demo_ml.gif' %}" class="w-full rounded-xl border shadow mb-4" alt="Demo Dropout">
+      <div class="flex gap-4">
+        <a href="https://github.com/RiskaMellyAgustin/DATA-SCIENCE-PROJECT-EXAM" target="_blank" class="btn-purple">💻 GitHub</a>
+        <a href="{% url 'home' %}" class="btn-gray">← Home</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .btn-purple {
+    @apply px-6 py-2 bg-purple-100 text-purple-700 rounded-full hover:bg-purple-200 font-semibold text-sm shadow;
+  }
+  .btn-gray {
+    @apply px-6 py-2 bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300 font-semibold text-sm shadow;
+  }
+</style>
+{% endblock %}

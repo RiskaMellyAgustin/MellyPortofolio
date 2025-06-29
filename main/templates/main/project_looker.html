@@ -1,0 +1,68 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Orders Dashboard (Looker Studio){% endblock %}
+
+{% block content %}
+<section class="min-h-screen bg-gradient-to-b from-white via-pink-100 to-pink-50 py-20 px-6">
+  <div class="max-w-5xl mx-auto bg-white rounded-3xl shadow-2xl border border-pink-100 p-10">
+
+    <h1 class="text-4xl font-extrabold text-purple-700 mb-6 animate-pulse">📊 Orders Dashboard - Looker Studio</h1>
+
+    <!-- 📝 Project Overview -->
+    <p class="text-lg text-gray-700 mb-6">
+      Ini adalah proyek data visualization yang bertujuan untuk menyajikan analisis data pemesanan (orders) dalam bentuk dashboard interaktif. 
+      Visualisasi dibangun menggunakan <strong>Google Looker Studio</strong> dan terhubung langsung dengan <strong>Google Sheets</strong> sebagai sumber data dinamis.
+    </p>
+
+    <!-- 🛠️ Tools -->
+    <div class="mb-6">
+      <h3 class="text-xl font-bold text-pink-700 mb-2">🛠 Tools & Platform</h3>
+      <ul class="list-disc list-inside text-base text-gray-700 space-y-1">
+        <li>📊 <strong>Google Looker Studio</strong> – untuk membangun visualisasi dashboard</li>
+        <li>📄 <strong>Google Sheets</strong> – sebagai data source yang terhubung langsung</li>
+        <li>🧠 <strong>Data Filtering & Segmentation</strong> – berdasarkan Region, Segment, Category, dsb.</li>
+        <li>🎨 <strong>Dark Theme Custom Styling</strong> – tampilan profesional dan fokus visual</li>
+      </ul>
+    </div>
+
+    <!-- 📈 Insight -->
+    <div class="mb-6">
+      <h3 class="text-xl font-bold text-purple-700 mb-2">📌 Insight & Fitur</h3>
+      <ul class="list-disc list-inside text-base text-gray-700 space-y-1">
+        <li>Total orders: <strong>5,009 transaksi</strong></li>
+        <li>Segment terbanyak: <strong>Consumer</strong> (51.9%)</li>
+        <li>Visualisasi: Donut Chart, Bar Chart, dan Line Chart (per tahun & bulan)</li>
+        <li>Filter interaktif: Region, Segment, Category, Ship Mode</li>
+        <li>Top City: <strong>New York City</strong> dengan jumlah order tertinggi</li>
+      </ul>
+    </div>
+
+    <!-- 🖼️ Screenshot -->
+    <img src="{% static 'img/looker_dashboard.jpg' %}" alt="Preview Dashboard" class="w-full rounded-xl border shadow mb-8">
+
+    <!-- 🔗 Action Buttons -->
+    <div class="flex flex-wrap gap-4">
+      <a href="https://lookerstudio.google.com/reporting/c49e7945-23bf-48a1-ac28-050e97b39b66" target="_blank" class="btn-purple">
+        🌐 Open Looker Studio
+      </a>
+      <a href="https://docs.google.com/spreadsheets/d/1MxTF2xIfzJJWV7ILGKLgy9EYuP3uJ7Bm" target="_blank" class="btn-purple">
+        📄 View Dataset
+      </a>
+      <a href="{% url 'home' %}" class="btn-gray">
+        ← Home
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .btn-purple {
+    @apply px-6 py-2 bg-purple-100 text-purple-700 rounded-full hover:bg-purple-200 font-semibold text-sm shadow;
+  }
+  .btn-gray {
+    @apply px-6 py-2 bg-gray-200 text-gray-700 rounded-full hover:bg-gray-300 font-semibold text-sm shadow;
+  }
+</style>
+{% endblock %}
