@@ -32,7 +32,8 @@ if not SECRET_KEY:
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = ['mellyportfolio.vercel.app']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost','riskamellyporto.fly.dev']
+
 
 # ALLOWED_HOSTS = ['riskamellyportofolio.onrender.com']
 
